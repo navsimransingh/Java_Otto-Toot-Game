@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+
+<Pane id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="860" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="fxml_controller">
+    <children>
+        <GridPane fx:id="gridPane" alignment="TOP_LEFT">
+            <children>
+                <Text id="welcome-text" text="Play!!!" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+                
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                   <children>
+                       <Button onAction="#startConnectFour" text="Connect4">
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </Button>
+                       <Button onAction="#startOTTOFour" text="TOOT and OTTO">
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin>
+                  </Button>
+                   </children>
+                </HBox>
+                               
+                <Label text="Mode:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+                   <children>
+                       <ToggleButton fx:id="oneOnOneToggle" onAction="#deComputerizePlayerTwo" text="One VS One " />
+                       <ToggleButton fx:id="oneOnComputerToggle" onAction="#computerizePlayerTwo" text="One VS Computer" />
+                   </children>
+                </HBox>
+                
+                <Label text="Player1:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+ 
+                <TextField fx:id="playerOne" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                
+                <Label text="Player2:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+ 
+                <TextField fx:id="playerTwo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                
+                <Label text="Level:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="5">
+                   <children>
+                       <Button fx:id="easyToggleButton" onAction="#changeToEasyPlayer" text="Easy" />
+                       <Button fx:id="hardToggleButton" onAction="#changeToHardPlayer" text="Hard" />
+                   </children>
+                </HBox>
+                
+                <VBox alignment="center" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                
+                <HBox id="#player-vs-player" alignment="center" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                   <children>
+                           <Label text="${playerOne.text}" />
+                           <Text text=" VS " />
+                           <Label text="${playerTwo.text}" />
+                   </children>
+                </HBox>
+                
+                <HBox alignment="center" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                   <children>
+                       <Label id="player-turn" fx:id="playerTurn" />
+                   </children>
+                </HBox>
+                
+                <HBox fx:id="discChoices" alignment="center" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                   <children>
+                       <Group fx:id="discGroupOne">
+                          <children>
+                              <Circle fx:id="discOne" fill="WHITE" radius="20" />
+                              <Text text="O" textAlignment="center" />
+                          </children>
+                       </Group>
+                       <Group fx:id="discGroupTwo">
+                          <children>
+                              <Circle fx:id="discTwo" fill="WHITE" radius="20" />
+                              <Text text="T" textAlignment="center" />
+                          </children>
+                       </Group>
+                   </children>
+                </HBox>
+                
+               
+                
+                <Pane fx:id="gameplayPane" prefHeight="500" prefWidth="640" GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.rowSpan="10" />
+                     
+   <!--                        <Button text="Help"     
+                     onAction="#handleButtonAction"/>-->
+                     <!--<Button onAction="#handleExitAction" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="13" GridPane.valignment="TOP">-->
+<!--               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </Button>-->
+
+            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </children>
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+    
+</Pane>
